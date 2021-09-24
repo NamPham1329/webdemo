@@ -30,7 +30,8 @@ class updateUser extends DB{
     function updateRole()
     {
         $sql = "UPDATE account SET role_id = '$this->idRole' WHERE id='$this->userID'";
-        return $this->execute($sql);
+        $this->execute($sql);
+        header('Location: /webdemo/admin/user/listUser'); 
     }
 }
 if(!empty($_POST['update']))

@@ -39,12 +39,13 @@ class updateProduct extends DB{
     {
         if(!empty($this->name) && !empty($this->name) && !empty($this->price) && !empty($this->detail) && !empty($this->categoryID) && !empty($this->prd_img))
         {
-            $path = "../../upload/";
+            $path = "../../../public/upload/";
             $tmp_name = $_FILES['image']['tmp_name'];
             $this->prd_img = $_FILES['image']['name'];
             move_uploaded_file($tmp_name,$path.$this->prd_img);
             $sql = "UPDATE product SET product_name = '$this->name', price = '$this->price', product_detail = '$this->detail', category_id = '$this->categoryID', product_img = '$this->prd_img' WHERE id = '$this->id'";
-            return $this->execute($sql); 
+            $this->execute($sql); 
+            header('Location: /webdemo/admin/product/listProduct'); 
         }
     }
 }

@@ -31,7 +31,7 @@ $data = $product->get_Prd();
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="/webdemo/">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -47,9 +47,10 @@ $data = $product->get_Prd();
                             </ul>
                         </li>
                     </ul>
+                    
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            <a class="link" style="color: #000;" href="/webdemo/view/cart">
+                            <a class="link" style="color: #000;" href="/webdemo/view/cart/">
                                 <i class="bi-cart-fill me-1"></i>
                                 Cart
                                 <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
@@ -66,6 +67,11 @@ $data = $product->get_Prd();
                     <form method="POST" class="d-flex" style="margin-left: 10px;">
                         <button class='btn btn-outline-dark' type="submit" name="logout" value="logout">Logout</button>	
                     </form>
+                    <?php if(!empty($_SESSION))
+                    {
+                        echo($_SESSION['users']['username']);
+                    } ?>
+                    
                 </div>
             </div>
         </nav>
@@ -83,7 +89,7 @@ $data = $product->get_Prd();
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <?php 
-                $path = 'admin/upload/';
+                $path = 'public/upload/';
                 foreach ($data as $item){?>   
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -98,10 +104,7 @@ $data = $product->get_Prd();
                                     <?php echo '$'.$item['price'];?>
                                 </div>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
+                            <a class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center" href="/webdemo/view/product/?id=<?php echo $item['id']; ?>"><button class="btn btn-outline-dark">View options</button></a>
                         </div>
                     </div>
                 <?php } ?>

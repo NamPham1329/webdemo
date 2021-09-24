@@ -19,12 +19,13 @@ class insertProduct extends DB{
     {
         if(!empty($this->name) && !empty($this->price) && !empty($this->detail) && !empty($this->categoryID) && !empty($this->prd_img))
         {
-            $path = "../../upload/";
+            $path = "../../../public/upload/";
             $tmp_name = $_FILES['image']['tmp_name'];
             $this->prd_img = $_FILES['image']['name'];
             move_uploaded_file($tmp_name,$path.$this->prd_img);
             $sql = "INSERT INTO product(id, product_name, price, product_detail, category_id, product_img) values(null,'$this->name', '$this->price', '$this->detail', '$this->categoryID', '$this->prd_img')";
-            return $this->execute($sql);
+            $this->execute($sql);
+            header('Location: /webdemo/admin/product/listProduct'); 
         }
     }
 }

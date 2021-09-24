@@ -12,7 +12,8 @@ class insertCategories extends DB{
         if(!empty($this->category_name))
         {
             $sql = "INSERT INTO categories(id, category_name)values(null, '$this->category_name')";
-            return $this->execute($sql);
+            $this->execute($sql);
+            header('Location: /webdemo/admin/category/listCategory'); 
         }
     }
 }

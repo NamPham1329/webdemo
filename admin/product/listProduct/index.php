@@ -60,7 +60,7 @@ if($_SESSION['users']['role_id'] !== '1'){
                         </thead>
                         <tbody>
                             <?php
-                                $path = '../../upload/';
+                                $path = '../../../public/upload/';
                                 foreach ($data1 as $item){?>
                                     <tr>
                                     <td><?php echo $item['id']?></td>

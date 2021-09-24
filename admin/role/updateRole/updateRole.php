@@ -31,7 +31,8 @@ class updateRole extends DB{
         if(!empty($this->id) && !empty($this->roleName))
         {
             $sql = "UPDATE role SET role_name = '$this->roleName' WHERE id = '$this->id'";
-            return $this->execute($sql);
+            $this->execute($sql);
+            header('Location: /webdemo/admin/role/listRole'); 
         }
     }
 }

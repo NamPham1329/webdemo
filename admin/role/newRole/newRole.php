@@ -12,7 +12,8 @@ class insertRole extends DB{
         if(!empty($this->name))
         {
             $sql = "INSERT INTO role(id, role_name) values (null, '$this->name')";
-            return $this->execute($sql);
+            $this->execute($sql);
+            header('Location: /webdemo/admin/role/listRole'); 
         }
     }
 }

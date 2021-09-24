@@ -95,7 +95,7 @@ span.psw {
         
     <button type="submit" name="login" value="login">Login</button>
   </div>
-  <span class="psw"><a href="/webdemo/user/register">Do not have account?</a></span>
+  <span class="psw"><a href="/webdemo/view/register">Do not have account?</a></span>
 </form>
 <?php
 

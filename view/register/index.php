@@ -82,7 +82,7 @@ a {
     <button type="submit" class="registerbtn" name="register" value="register">Register</button>
   </div>
   <div class="container signin">
-    <p>Already have an account? <a href="/webdemo/user/login">Sign in</a>.</p>
+    <p>Already have an account? <a href="/webdemo/view/login">Sign in</a>.</p>
   </div>
 </form>
 

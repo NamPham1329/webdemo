@@ -51,7 +51,6 @@
                         <tr>
                             <th scope="col">Order ID</th>
                             <th scope="col">Customer ID</th>
-                            <th scope="col">Total</th>
                             <th scope="col">Status</th>
                             <th scope="col"></th>
                         </tr>
@@ -62,7 +61,6 @@
                                 <tr>
                                 <td><?php echo $item['id']?></td>
                                 <td><?php echo $item['customer_id']?></td>
-                                <td><?php echo $item['order_total']?></td>
                                 <td><?php echo $item['order_status']?></td>
                                 <td style="width: 5%;"><a href="/webdemo/admin/orderDetail/viewDetail/?id=<?php echo $item['id'];?>"><button class="btn btn-warning left-margin">Detail</button></a></td>
                                 <td>

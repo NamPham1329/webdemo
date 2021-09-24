@@ -2,7 +2,7 @@
     require_once("../../category/listCategory/listCategories.php");
     session_start();
     if($_SESSION['users']['role_id'] !== '1'){
-        header('Location: /webdemo/user/login');
+        header('Location: /webdemo/view/login');
     }
 ?>
 <!DOCTYPE html>

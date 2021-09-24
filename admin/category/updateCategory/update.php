@@ -29,7 +29,8 @@ class updateCategory extends DB{
         if(!empty($_POST['name']))
         {
             $sql = "UPDATE categories SET category_name = '$this->category' WHERE id='$this->id'";
-            return $this->execute($sql); 
+            $this->execute($sql);
+            header('Location: /webdemo/admin/category/listCategory'); 
         }
     }
 }
