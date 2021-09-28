@@ -1,6 +1,6 @@
 <?php
 require_once("getPrdByID.php");
-print_r($_POST);
+require_once("../cart/insertProduct/insert.php");
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ print_r($_POST);
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            <a class="link" style="color: #000;" href="/webdemo/view/cart/">
+                            <a class="link" style="color: #000;" href="/webdemo/view/cart/viewCart">
                                 <i class="bi-cart-fill me-1"></i>
                                 Cart
                                 <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
@@ -63,7 +63,11 @@ print_r($_POST);
         <!-- Header-->
         <!-- Product section-->
         <section class="py-5">
-            <?php foreach ($data as $item) {?>
+            <?php
+            if(!empty($data))
+            {
+
+            foreach ($data as $item) {?>
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?php $path ="../../public/upload/" ;echo $path.$item['product_img'] ?>" alt="" /></div>
@@ -75,14 +79,14 @@ print_r($_POST);
                         </div>
                         <p class="lead"><?php echo $item['product_detail'] ?></p>
                         <div class="d-flex">
-                            <form method="POST" action="../cart/index.php" class="d-flex" style="margin-left: 10px;">
+                            <form method="POST" class="d-flex" style="margin-left: 10px;">
                                 <button class='btn btn-outline-dark' type="submit" name="addToCart" value="<?php echo $item['id']?>"><i class="bi-cart-fill me-1"></i>Add to cart</button>	
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php } }?>
         </section>
         <!-- Related items section-->
         <section class="py-5 bg-light">

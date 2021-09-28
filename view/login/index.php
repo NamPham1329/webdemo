@@ -97,8 +97,6 @@ span.psw {
   </div>
   <span class="psw"><a href="/webdemo/view/register">Do not have account?</a></span>
 </form>
-<?php
 
-?>
 </body>
 </html>

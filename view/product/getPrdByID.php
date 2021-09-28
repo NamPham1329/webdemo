@@ -10,7 +10,6 @@ class productDetail extends DB{
     {
         $sql = "SELECT * FROM product WHERE id = '$this->id'";
         return $this->executeResult($sql);
-        
     }
 }
 if(!empty($_GET['id']))
