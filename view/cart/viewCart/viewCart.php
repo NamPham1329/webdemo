@@ -27,6 +27,21 @@ class listOrder extends DB{
         return $this->executeResult($sql);
     }
 }
+
+class total extends DB{
+    protected $orderId;
+    function __construct($id)
+    {
+        $this->orderId = $id;
+    }
+    function getTotal()
+    {
+        $sql = "SELECT product_price, quantity FROM orderdetail WHERE order_id = '$this->orderId'";
+        return $this->executeResult($sql);
+    }
+
+}
+
 if(!empty($_SESSION['users']))
 {
     $idAccount = $_SESSION['users']['id'];
@@ -35,6 +50,12 @@ if(!empty($_SESSION['users']))
     $idCart = $id[0]['id'];
     $idOrder = new listOrder($idCart);
     $data = $idOrder->getList();
+    $total = new total($id[0]['id']);
+    $totalValue = $total->getTotal();
+    $result = 0;
+    for($i=0; $i<count($totalValue); $i++)
+    {
+        $result += (int)($totalValue[$i]['product_price']*$totalValue[$i]['quantity']);
+    }
 }
-
 ?>

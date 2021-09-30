@@ -1,5 +1,5 @@
 <?php
-require_once("../../../database/db_helper.php");
+include("../../../database/db_helper.php");
 class getPrd extends DB{
     function get_Product()
     {
@@ -10,3 +10,4 @@ class getPrd extends DB{
 $list = new getPrd();
 $data1 = $list->get_Product();
 ?>
+

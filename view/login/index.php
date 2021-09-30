@@ -8,6 +8,20 @@ if(!empty($_SESSION['users']['role_id']))
       header('Location: /webdemo/admin/product/listProduct');
   }
 }
+// print_r($_SESSION);
+// echo "<br>";
+// print_r($_POST);
+?>
+
+<?php
+require_once("login.php");
+if(!empty($_SESSION['users']['role_id']))
+{
+  if($_SESSION['users']['role_id']==='1')
+  {
+      header('Location: /webdemo/admin/product/listProduct');
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>

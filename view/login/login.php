@@ -2,6 +2,7 @@
 require_once('index.php');
 require_once('../../database/db_helper.php');
 
+
 class Login extends DB
 {   
     protected $username;
@@ -35,6 +36,5 @@ if(!empty($_POST['login'])){
     $pass = $_POST['password'];
     $login = new Login($user, $pass);
     $login->login();
-         
 }
 ?>

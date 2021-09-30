@@ -11,6 +11,8 @@ class GetPrd extends Db{
 $product = new GetPrd();
 $data = $product->get_Prd();
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
