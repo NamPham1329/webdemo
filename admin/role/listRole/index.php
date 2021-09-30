@@ -159,23 +159,23 @@ require_once("../../../view/logout/logout.php");
             </div>
             <div class="menu-sidebar__content">
                 <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
+                <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a  href="/webdemo/" class="">
-                                <i class="fas fa-tachometer-alt"></i>Home
+                            <i class="fas fa-home"></i></i>Home
                             </a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/user/listUser/">
-                                <i class="fas fa-chart-bar"></i>Account</a>
+                            <i class="fas fa-user"></i></i>Account</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/product/listProduct/">
-                                <i class="fas fa-table"></i>Products</a>
+                            <i class="fas fa-box"></i>Products</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/category/listCategory/">
-                                <i class="far fa-check-square"></i>Category</a>
+                            <i class="fas fa-clipboard-list"></i>Category</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/order/listOrder/">
@@ -246,6 +246,7 @@ require_once("../../../view/logout/logout.php");
                                         </thead>
                                         <tbody>
                                             <?php
+                                            if(!empty($data)){
                                                 foreach($data as $item){
                                             ?>
                                             <tr class="tr-shadow">
@@ -270,7 +271,7 @@ require_once("../../../view/logout/logout.php");
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?php }?>
+                                            <?php } }?>
                                         </tbody>
                                     </table>
                                 </div>

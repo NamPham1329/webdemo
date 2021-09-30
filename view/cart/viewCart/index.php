@@ -8,7 +8,7 @@ if(empty($_SESSION['users']))
 }
 // print_r($_POST);
 // echo "<br>";
-// print_r($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,13 +77,19 @@ if(empty($_SESSION['users']))
         </div>
         </form>
         <div class="shopping-cart-footer">
-            <div class="column text-lg">Subtotal: <span class="text-medium"><?php echo '$'.$result?></span></div>
+            <div class="column text-lg">Subtotal: <span class="text-medium"><?php 
+            if(!empty($result)){
+                echo '$'.$result;
+            } else {
+                echo "$0";
+            }
+            ?></span></div>
         </div>
         <div class="shopping-cart-footer">
             <div class="column"><a class="btn btn-outline-secondary" href="/webdemo/"><i class="icon-arrow-left"></i>&nbsp;Back to Shopping</a></div>
             <div class="column">
                 <button class="btn btn-primary" type="submit" name="update" value="<?php echo $data[0]['order_id'];?>">Update</button>
-                <a class="btn btn-success" href="#">Checkout</a>
+                <a class="btn btn-success" href="/webdemo/view/checkout/?id=<?php echo $item['order_id']?>">Checkout</a>
             </div>
         </div>
     </div>

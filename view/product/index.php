@@ -73,14 +73,14 @@ require_once("../cart/insertProduct/insert.php");
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="<?php $path ="../../public/upload/" ;echo $path.$item['product_img'] ?>" alt="" /></div>
                     <div class="col-md-6">
                         <div class="small mb-1"></div>
-                        <h1 class="display-5 fw-bolder"><?php echo $item['product_name']?></h1>
+                        <h1 class="display-5 fw-bolder" style="font-size: 30px;"><?php echo $item['product_name']?></h1>
                         <div class="fs-5 mb-5">
                             <span><?php echo '$'.$item['price']?></span>
                         </div>
                         <p class="lead"><?php echo $item['product_detail'] ?></p>
                         <div class="d-flex">
-                            <form method="POST" class="d-flex" style="margin-left: 10px;">
-                                <button class='btn btn-outline-dark' type="submit" name="addToCart" value="<?php echo $item['id']?>"><i class="bi-cart-fill me-1"></i>Add to cart</button>	
+                            <form method="POST" class="d-flex" style="margin-left: 10px;" onsubmit="return deleteItem();">
+                                <button class='btn btn-outline-dark' type="submit"  name="addToCart" value="<?php echo $item['id']?>"><i class="bi-cart-fill me-1"></i>Add to cart</button>	
                             </form>
                         </div>
                     </div>
@@ -202,5 +202,13 @@ require_once("../cart/insertProduct/insert.php");
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="../../public/frontend/js/scripts.js"></script>
+        <script type="text/javascript">
+	function deleteItem() {
+		option = confirm('Do you want to add products to cart?')
+		if(!option) return false
+		return true
+	}
+
+</script>
     </body>
 </html>

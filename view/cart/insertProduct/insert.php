@@ -81,10 +81,14 @@ if(!empty($_SESSION['users']) & (!empty($_POST['addToCart'])))
         $price = $value['price'];
         $prd_image = $value['product_img'];
     }
-    $order = $data1[0]['id'];
-    $quantity = '1';
-    $total = $price* $quantity;
-    $cartDetail = new addOrder($order, $prd_name, $price, $prd_image, $quantity, $total);
-    $cartDetail->saveCartDetail();
+    if(!empty($data1))
+    {
+        $order = $data1[0]['id'];
+        $quantity = '1';
+        $total = $price* $quantity;
+        $cartDetail = new addOrder($order, $prd_name, $price, $prd_image, $quantity, $total);
+        $cartDetail->saveCartDetail();
 }
+    }
+    
 ?>

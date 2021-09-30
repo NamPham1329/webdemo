@@ -33,8 +33,10 @@ if(!empty($_POST['delete']))
     $delCart = new deleteOrder($idOrder);
     $delCart->delete();
 }
+if(!empty($data)){
+    $id_order = $data[0]['order_id'];
+}
 
-$id_order = $data[0]['order_id'];
 if(!empty($_POST['deleteAll']))
 {
     $delAll = new deleteAll($id_order);

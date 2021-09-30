@@ -158,23 +158,23 @@
             </div>
             <div class="menu-sidebar__content">
                 <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
+                <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a  href="/webdemo/" class="">
-                                <i class="fas fa-tachometer-alt"></i>Home
+                            <i class="fas fa-home"></i></i>Home
                             </a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/user/listUser/">
-                                <i class="fas fa-chart-bar"></i>Account</a>
+                            <i class="fas fa-user"></i></i>Account</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/product/listProduct/">
-                                <i class="fas fa-table"></i>Products</a>
+                            <i class="fas fa-box"></i>Products</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/category/listCategory/">
-                                <i class="far fa-check-square"></i>Category</a>
+                            <i class="fas fa-clipboard-list"></i>Category</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/order/listOrder/">
@@ -226,14 +226,7 @@
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
                                 <h3 class="title-5 m-b-35">order list</h3>
-                                <div class="table-data__tool">
-                                    <div class="table-data__tool-right" style="position: absolute; right: 2%;">
-                                        <a href="/webdemo/admin/product/insertProduct/">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>add item
-                                        </button></a>   
-                                    </div>
-                                </div>
+                                
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
@@ -246,6 +239,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                            if(!empty($data)){
                                                 $path = "../../upload/";
                                                 foreach($data as $item){
                                             ?>
@@ -256,7 +250,7 @@
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <a href="/webdemo/admin/orderDetail/viewDetail/?id=<?php echo $item['id'];?>" style="margin-right: 5px;">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Detail">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                         </a>
@@ -272,7 +266,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?php }?>
+                                            <?php } }  ?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -47,15 +47,22 @@ if(!empty($_SESSION['users']))
     $idAccount = $_SESSION['users']['id'];
     $idUser = new Cart($idAccount);
     $id = $idUser->getCart();
-    $idCart = $id[0]['id'];
-    $idOrder = new listOrder($idCart);
-    $data = $idOrder->getList();
-    $total = new total($id[0]['id']);
-    $totalValue = $total->getTotal();
-    $result = 0;
-    for($i=0; $i<count($totalValue); $i++)
-    {
-        $result += (int)($totalValue[$i]['product_price']*$totalValue[$i]['quantity']);
+    if(!empty($id)){
+        $idCart = $id[0]['id'];
+        $idOrder = new listOrder($idCart);
+        $data = $idOrder->getList();
+        $total = new total($id[0]['id']);
+        $totalValue = $total->getTotal();
+        $result = 0;
+        if(!empty($totalValue)){
+            for($i=0; $i<count($totalValue); $i++)
+            {
+                $result += (int)($totalValue[$i]['product_price']*$totalValue[$i]['quantity']);
+            }
+        }
+        
     }
+    
+    
 }
 ?>

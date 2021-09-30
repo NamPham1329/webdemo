@@ -158,23 +158,23 @@
             </div>
             <div class="menu-sidebar__content">
                 <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
+                <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a  href="/webdemo/" class="">
-                                <i class="fas fa-tachometer-alt"></i>Home
+                            <i class="fas fa-home"></i></i>Home
                             </a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/user/listUser/">
-                                <i class="fas fa-chart-bar"></i>Account</a>
+                            <i class="fas fa-user"></i></i>Account</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/product/listProduct/">
-                                <i class="fas fa-table"></i>Products</a>
+                            <i class="fas fa-box"></i>Products</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/category/listCategory/">
-                                <i class="far fa-check-square"></i>Category</a>
+                            <i class="fas fa-clipboard-list"></i>Category</a>
                         </li>
                         <li>
                             <a href="/webdemo/admin/order/listOrder/">
@@ -271,7 +271,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">category</h3>
+                                <h3 class="title-5 m-b-35">order detail</h3>
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
@@ -285,6 +285,8 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                                if(!empty($data))
+                                                {
                                                 foreach($data as $item){
                                             ?>
                                             <tr class="tr-shadow">
@@ -293,7 +295,8 @@
                                                 <td><?php echo $item['product_price']?></td>
                                                 <td><?php echo $item['quantity']?></td>
                                             </tr>
-                                            <?php }?>
+                                            <?php } }?>
+
                                         </tbody>
                                     </table>
                                 </div>
