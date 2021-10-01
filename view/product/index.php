@@ -203,12 +203,11 @@ require_once("../cart/insertProduct/insert.php");
         <!-- Core theme JS-->
         <script src="../../public/frontend/js/scripts.js"></script>
         <script type="text/javascript">
-	function deleteItem() {
-		option = confirm('Do you want to add products to cart?')
-		if(!option) return false
-		return true
-	}
-
+        function deleteItem() {
+            option = confirm('Do you want to add products to cart?')
+            if(!option) return false
+            return true
+        }
 </script>
     </body>
 </html>

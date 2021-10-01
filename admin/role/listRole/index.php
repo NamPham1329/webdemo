@@ -229,7 +229,7 @@ require_once("../../../view/logout/logout.php");
                                 <h3 class="title-5 m-b-35">role</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right" style="position: absolute; right: 2%;">
-                                        <a href="/webdemo/admin/product/insertProduct/">
+                                        <a href="/webdemo/admin/role/newRole/">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                             <i class="zmdi zmdi-plus"></i>add item
                                         </button></a>   
